@@ -1,17 +1,21 @@
 import { StyleSheet } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
-import { Text, View } from '../components/Themed';
+import { ScrollView, Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 
 export default function HomeScreen({ navigation }: RootTabScreenProps<'Home'>) {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Text style={styles.title}>
         Boa Tarde!
       </Text>
-      <Card />
-    </View>
+      <ScrollView horizontal={true}>
+        <Card />
+        <Card />
+        <Card />
+      </ScrollView>
+    </ScrollView>
   );
 }
 
@@ -44,6 +48,8 @@ const styles = StyleSheet.create({
     width: '80%',
   },
   card: {
-    height: 300
+    margin: 20,
+    height: 200,
+    width: 200
   }
 });
